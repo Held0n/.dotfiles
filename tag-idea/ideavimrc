@@ -1,0 +1,116 @@
+" ██╗██████╗ ███████╗ █████╗     ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+" ██║██╔══██╗██╔════╝██╔══██╗    ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+" ██║██║  ██║█████╗  ███████║    ██║   ██║██║██╔████╔██║██████╔╝██║     
+" ██║██║  ██║██╔══╝  ██╔══██║    ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+" ██║██████╔╝███████╗██║  ██║     ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+" ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝      ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+"
+
+" ====
+" ==== Vim 系统配置
+" ====
+
+filetype on                                       " 开启文件类型检测
+filetype plugin indent on                         " 开启特定的文件类型的插件和缩进
+set clipboard=unnamed                             " 设置系统粘贴板
+set mouse=a                                       " 开启所有模式下的鼠标支持
+set history=1000
+set smd                                           " show vim mode
+set wrap
+
+" ==== Vim UI 配置
+" ====
+
+syntax enable                                     " 使用语法高亮
+syntax on                                         " 语法高亮
+set number                                        " 设置显示行号
+set ruler                                         " 设置显示光标所在位置
+
+" ====
+" ==== Vim 编辑设置
+" ====
+
+" Tab 配置
+set expandtab                                     " 设置将 Tab 转换为 Space
+set shiftwidth=4                                  " 设置 Tab 等于4个 Space
+set tabstop=4                                     " 被建议如此设置
+set softtabstop=4                                 " 被建议如此设置
+
+" Backspace 配置
+set backspace=indent,eol,start                    " 设置backspace的工作方式
+
+" 搜索设置
+set hlsearch                                      " 设置搜索高亮
+set incsearch                                     " 设置边高亮边搜索
+set ignorecase                                    " 设置搜索忽略大小写
+set smartcase                                     " 设置搜索智能大小写
+
+" 其他设置
+set nrformats=bin                                 " 设置数字都为10进制
+
+" ====
+" ==== Plugins
+" ====
+set commentary
+set exchange
+
+" ====
+" ==== Key-Mapping
+" ====
+
+" H 跳到行首
+noremap H ^
+" L 跳到行尾
+noremap L $
+" J 向下跳5行
+noremap J 5j
+" K 向上跳5行
+noremap K 5k
+
+let mapleader=" "
+
+" <Space>-q => 退出
+noremap <leader>q :q<CR>
+" <Space>-w => 保存
+noremap <leader>w :w<CR>
+" <Space>-/ => 取消高亮
+noremap <leader>/ :nohlsearch<CR>
+
+" 输入模式下jj => <ESC>
+inoremap jj <esc>
+
+" 窗口跳转
+nnoremap <leader>l <c-w>l
+nnoremap <leader>j <c-w>j
+nnoremap <leader>h <c-w>h
+nnoremap <leader>k <c-w>k
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+
+" actions
+nnoremap <leader>e <ESC>:action Switcher<CR>
+nnoremap / <ESC>:action Find<CR>
+nnoremap <c-o> <ESC>:action Back<cr>
+nnoremap <c-i> <ESC>:action Forward<cr>
+
+nnoremap ,p <ESC>:action ActivateProjectToolWindow<CR>
+nnoremap ,t <ESC>:action ActivateTerminalToolWindow<CR>
+nnoremap ,m <ESC>:action Bookmarks<CR>
+nnoremap ,s <ESC>:action ActivateStructureToolWindow<CR>
+nnoremap mm <ESC>:action ToggleBookmark<CR>
+
+" 保留 ideavim 的配置
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
+" 使搜索位于屏幕中心
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" Tab 栏
+noremap tj :tabp<CR>
+noremap tk :tabn<CR>
+set clipboard+=ideaput
