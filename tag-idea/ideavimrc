@@ -6,6 +6,8 @@
 " ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝      ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 "
 
+" ==== :actionlist [pattern] :action {name}
+
 " ====
 " ==== Vim 系统配置
 " ====
@@ -52,7 +54,7 @@ set nrformats=bin                                 " 设置数字都为10进制
 " ==== Plugins
 " ====
 set commentary
-set exchange
+set easymotion
 
 " ====
 " ==== Key-Mapping
@@ -95,7 +97,7 @@ nnoremap <c-i> <ESC>:action Forward<cr>
 
 nnoremap ,p <ESC>:action ActivateProjectToolWindow<CR>
 nnoremap ,t <ESC>:action ActivateTerminalToolWindow<CR>
-nnoremap ,m <ESC>:action Bookmarks<CR>
+nnoremap ,m <ESC>:action ShowBookmarks<CR>
 nnoremap ,s <ESC>:action ActivateStructureToolWindow<CR>
 nnoremap mm <ESC>:action ToggleBookmark<CR>
 
