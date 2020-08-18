@@ -35,8 +35,9 @@ set ruler                                         " 设置显示光标所在位�
 set cmdheight=2                                   " 设置命令号高度为2
 set laststatus=2                                  " 设置状态栏
 set cursorline                                    " 设置显示光标所在行下划线
-set guifont=DroidSansMono_Nerd_Font:h11           " 设置字体和大小
+set guifont=SourceCodePro:h11                     " 设置字体和大小
 " set relativenumber                              " 设置相对行号
+set foldcolumn=0                                  " 设置代码折叠线宽度为0 
 
 " ====
 " ==== Vim 编辑设置
@@ -185,6 +186,9 @@ Plug 'mzlogin/vim-markdown-toc'
 
 " sneak 快速跳转插件
 Plug 'justinmk/vim-sneak'
+
+" easymotion 
+Plug 'Lokaltog/vim-easymotion'
 
 " defx 文件导航插件
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -423,4 +427,5 @@ let g:bufferline_echo = 0
 let g:bookmark_highlight_lines = 1
 let g:bookmark_center = 1
 let g:bookmark_auto_save = 1
+
 
