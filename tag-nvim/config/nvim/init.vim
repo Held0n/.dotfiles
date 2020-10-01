@@ -25,10 +25,8 @@ exec "nohlsearch"
 " ====
 " ==== Vim UI 配置
 " ====
-packadd dracula                                   " 添加 dracula-theme
 syntax enable                                     " 使用语法高亮
 syntax on                                         " 语法高亮
-colorscheme dracula                               " 设置dracula主题
 set t_Co=256                                      " 设置为256配色
 set number                                        " 设置显示行号
 set ruler                                         " 设置显示光标所在位置
@@ -197,8 +195,16 @@ Plug 'kristijanhusak/defx-icons'
 " vim-bookmarks 书签插件
 Plug 'MattesGroeger/vim-bookmarks'
 
+" Firenvim
+Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0) } }
+
+" Dracula
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " 初始化插件系统 
 call plug#end()
+
+colorscheme dracula                               " 设置dracula主题
 
 " ==============================================
 " ====    vim-auto-save 自动保存插件配置    ====
