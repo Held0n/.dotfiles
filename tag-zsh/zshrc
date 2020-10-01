@@ -12,6 +12,9 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 # Maven Path
 export MAVEN_PATH=/usr/local/opt/apache-maven-3.6.3
 export PATH="$MAVEN_PATH/bin:$PATH"
+# i3Exit Path
+export PATH="/home/heldon/.config/scripts/:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.omz
 
@@ -90,7 +93,8 @@ plugins=(git
          zsh-interactive-cd
          colored-man-pages 
          battery
-         vi-mode)
+         vi-mode
+         gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,4 +127,6 @@ alias lg="lazygit"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"
 alias chrome="chromium --proxy-server=socks5://127.0.0.1:1077"
-
+alias code="code-insiders"
+alias dnote="~/Directory/Dnote/dnote"
+eval `dircolors ~/.dircolors`

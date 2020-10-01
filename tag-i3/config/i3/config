@@ -42,7 +42,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/scripts/tap-to-click.sh
 exec_always --no-startup-id ~/.config/scripts/inverse-scroll.sh
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b -i 1.0
 exec --no-startup-id variety
 exec --no-startup-id flameshot
 exec --no-startup-id qv2ray
@@ -194,6 +194,7 @@ for_window [title="copytranslator"] floating enable move scratchpad
 # 防止 jetbrain 的弹窗被挡住
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="qv2ray"] floating enable
+for_window [class="Wechat"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -266,6 +267,21 @@ bar {
 
 # hide / unhide i3status bar
 bindsym $mod+b bar mode toggle
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+p mode "$mode_system"
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
