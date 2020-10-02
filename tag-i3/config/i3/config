@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # Config border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -42,7 +42,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/scripts/tap-to-click.sh
 exec_always --no-startup-id ~/.config/scripts/inverse-scroll.sh
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id picom -b -i 1.0
+exec --no-startup-id picom -b -C -i 1.0
 exec --no-startup-id variety
 exec --no-startup-id flameshot
 exec --no-startup-id qv2ray
@@ -194,7 +194,8 @@ for_window [title="copytranslator"] floating enable move scratchpad
 # 防止 jetbrain 的弹窗被挡住
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="qv2ray"] floating enable
-for_window [class="Wechat"] floating enable
+for_window [class="wechat.exe"] floating enable
+for_window [class="fcitx"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -285,11 +286,11 @@ bindsym $mod+Shift+p mode "$mode_system"
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused          #556064 #556064 #80FFF9 #FDF6E3
-client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.focused          #F0F8FF #F0F8FF #80FFF9 #FDF6E3
+client.focused_inactive #7B68EE #7B68EE #1ABC9C #BA55D3
+client.unfocused        #7B68EE #7B68EE #1ABC9C #BA55D3
+client.urgent           #BA55D3 #BA55D3 #1ABC9C #268BD2
+client.placeholder      #BA55D3 #BA55D3 #ffffff #BA55D3
 
 client.background       #2B2C2B
 

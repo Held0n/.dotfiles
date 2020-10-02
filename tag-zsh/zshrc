@@ -13,7 +13,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export MAVEN_PATH=/usr/local/opt/apache-maven-3.6.3
 export PATH="$MAVEN_PATH/bin:$PATH"
 # i3Exit Path
-export PATH="/home/heldon/.config/scripts/:$PATH"
+# export PATH="/home/heldon/.config/scripts:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.omz
