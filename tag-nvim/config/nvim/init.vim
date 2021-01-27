@@ -192,12 +192,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 
-" vim-bookmarks 书签插件
-Plug 'MattesGroeger/vim-bookmarks'
-
-" Firenvim
-Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0) } }
-
 " Dracula
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -426,12 +420,3 @@ let g:bufferline_echo = 0
 " autocmd VimEnter *
 " \ let &statusline='%{bufferline#refresh_status()}'
 " \ .bufferline#get_status_string()
-
-" =============================
-" ====    vim-bookmarks    ====
-" =============================
-let g:bookmark_highlight_lines = 1
-let g:bookmark_center = 1
-let g:bookmark_auto_save = 1
-
-
